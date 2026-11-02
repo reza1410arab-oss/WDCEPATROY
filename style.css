@@ -1,0 +1,1276 @@
+
+/* =====================================
+   WD CEPAT ARAP - PURPLE LUXURY
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+/* BODY */
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 20px;
+    color: white;
+    overflow-x: hidden;
+
+    background:
+        radial-gradient(circle at 10% 10%, #7028c955, transparent 35%),
+        radial-gradient(circle at 90% 90%, #9b45ff33, transparent 40%),
+        #090611;
+}
+
+/* BACKGROUND GLOW */
+
+body::before {
+    content: "";
+    position: fixed;
+    width: 450px;
+    height: 450px;
+    top: -150px;
+    left: -150px;
+    background: #862aff;
+    filter: blur(170px);
+    opacity: .22;
+    pointer-events: none;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    width: 400px;
+    height: 400px;
+    right: -150px;
+    bottom: -150px;
+    background: #b34cff;
+    filter: blur(160px);
+    opacity: .2;
+    pointer-events: none;
+}
+
+/* CONTAINER */
+
+.container {
+    position: relative;
+    isolation: isolate;
+    width: 98%;
+    max-width: 1500px;
+    min-height: 750px;
+    padding: 60px;
+
+    background: rgba(76, 32, 115, .13);
+    border: 1px solid rgba(171, 105, 255, .35);
+    backdrop-filter: blur(25px);
+    border-radius: 35px;
+
+    box-shadow:
+        0 0 50px #7829c933,
+        0 0 100px #a64dff18,
+        inset 0 0 40px #a64dff0d;
+
+    animation: show .8s ease;
+}
+
+@keyframes show {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* TITLE */
+
+h1 {
+    text-align: center;
+    font-size: 48px;
+    letter-spacing: 4px;
+    margin-bottom: 15px;
+    color: #ffffff;
+
+    text-shadow:
+        0 0 10px #a855f7,
+        0 0 30px #9333ea;
+
+    animation: titleGlow 3s infinite alternate;
+}
+
+@keyframes titleGlow {
+    from {
+        text-shadow: 0 0 10px #9333ea;
+    }
+
+    to {
+        text-shadow:
+            0 0 20px #c084fc,
+            0 0 45px #9333ea;
+    }
+}
+
+p {
+    text-align: center;
+    margin: 15px 0 30px;
+    color: #d8b4fe;
+    font-size: 16px;
+}
+
+/* TEXTAREA */
+
+textarea {
+    width: 100%;
+    height: 350px;
+    resize: none;
+    padding: 28px;
+
+    border-radius: 22px;
+    background: #0c0815;
+    color: #ffffff;
+
+    border: 1px solid #9333ea;
+    outline: none;
+    font-size: 16px;
+
+    box-shadow: 0 0 20px #9333ea22;
+    transition: .3s;
+}
+
+textarea::placeholder {
+    color: #8f7ba8;
+}
+
+textarea:focus {
+    border-color: #c084fc;
+
+    box-shadow:
+        0 0 20px #9333ea77,
+        0 0 40px #9333ea33;
+}
+
+/* BUTTON GROUP */
+
+.button-group {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+/* BUTTON */
+
+button {
+    position: relative;
+    overflow: hidden;
+
+    flex: 1;
+    padding: 17px;
+    border: 1px solid #bd83ff55;
+    border-radius: 16px;
+
+    cursor: pointer;
+    color: white;
+    font-weight: 700;
+    letter-spacing: 1px;
+
+    background: linear-gradient(
+        135deg,
+        #7025bb,
+        #9333ea,
+        #6d28d9
+    );
+
+    box-shadow: 0 0 20px #9333ea44;
+    transition: .3s;
+}
+
+button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 80%;
+    height: 100%;
+
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,.35),
+        transparent
+    );
+
+    transition: .5s;
+}
+
+button:hover::before {
+    left: 130%;
+}
+
+button:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 0 25px #9333ea99,
+        0 0 45px #a855f744;
+}
+
+button:active {
+    transform: scale(.96);
+}
+
+/* TOTAL DATA */
+
+#totalData {
+    margin-top: 30px;
+    text-align: center;
+    padding: 17px;
+
+    border-radius: 16px;
+    background: rgba(147, 51, 234, .12);
+    border: 1px solid #9333ea88;
+
+    color: #d8b4fe;
+    font-weight: 700;
+
+    box-shadow: 0 0 20px #9333ea22;
+    animation: totalGlow 3s infinite alternate;
+}
+
+@keyframes totalGlow {
+    from {
+        box-shadow: 0 0 10px #9333ea22;
+    }
+
+    to {
+        box-shadow: 0 0 25px #9333ea66;
+    }
+}
+
+/* PREVIEW */
+
+#preview {
+    margin-top: 25px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+}
+
+/* DATA CARD */
+
+.item {
+    padding: 22px;
+    border-radius: 18px;
+
+    background: linear-gradient(
+        145deg,
+        rgba(147, 51, 234, .22),
+        rgba(255,255,255,.035)
+    );
+
+    border: 1px solid #a855f755;
+
+    box-shadow:
+        inset 0 0 20px #ffffff08,
+        0 0 18px #9333ea22;
+
+    backdrop-filter: blur(12px);
+    transition: .3s;
+
+    animation: card .4s ease;
+}
+
+.item strong {
+    color: #d8b4fe;
+    text-shadow: 0 0 12px #9333ea66;
+}
+
+.item:hover {
+    transform: translateY(-5px);
+    border-color: #c084fc;
+
+    box-shadow:
+        0 0 25px #9333ea55,
+        inset 0 0 20px #9333ea22;
+}
+
+@keyframes card {
+    from {
+        opacity: 0;
+        transform: scale(.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar {
+    width: 9px;
+}
+
+::-webkit-scrollbar-track {
+    background: #100a1c;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+        #9333ea,
+        #c084fc
+    );
+
+    border-radius: 20px;
+}
+
+/* MOBILE */
+
+@media(max-width: 600px) {
+    body {
+        padding: 20px 10px;
+    }
+
+    .container {
+        width: 100%;
+        padding: 25px 18px;
+        min-height: auto;
+        border-radius: 24px;
+    }
+
+    h1 {
+        font-size: 27px;
+        letter-spacing: 1px;
+    }
+
+    p {
+        font-size: 13px;
+    }
+
+    textarea {
+        height: 280px;
+        padding: 18px;
+    }
+
+    .button-group {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    button {
+        width: 100%;
+        flex: none;
+    }
+
+    #preview {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =====================================
+   ULTRA PURPLE NEON UPGRADE
+===================================== */
+
+/* AURA BACKGROUND */
+
+body {
+    background:
+        radial-gradient(ellipse at 15% 15%, #a000ff55, transparent 35%),
+        radial-gradient(ellipse at 85% 80%, #7000ff55, transparent 35%),
+        radial-gradient(ellipse at 50% 50%, #31005b33, transparent 65%),
+        #07030f;
+}
+
+/* PURPLE FLOATING LIGHT */
+
+body::before {
+    background: #a000ff;
+    opacity: .35;
+    animation: purpleAura 7s infinite alternate;
+}
+
+body::after {
+    background: #6200ff;
+    opacity: .35;
+    animation: purpleAura 9s infinite alternate-reverse;
+}
+
+@keyframes purpleAura {
+    from {
+        transform: scale(1);
+        filter: blur(130px);
+    }
+
+    to {
+        transform: scale(1.5);
+        filter: blur(180px);
+    }
+}
+
+/* NEON DASHBOARD */
+
+.container {
+    border: 1px solid #b44aff99;
+
+    box-shadow:
+        0 0 25px #a000ff55,
+        0 0 60px #8500ff55,
+        0 0 120px #7000ff33,
+        inset 0 0 50px #a000ff22;
+
+    animation: show .8s ease, dashboardGlow 4s infinite alternate;
+}
+
+@keyframes dashboardGlow {
+    from {
+        box-shadow:
+            0 0 25px #a000ff44,
+            0 0 60px #8500ff33,
+            inset 0 0 30px #a000ff11;
+    }
+
+    to {
+        box-shadow:
+            0 0 40px #c000ff88,
+            0 0 100px #8500ff66,
+            inset 0 0 60px #a000ff33;
+    }
+}
+
+/* PURPLE TITLE */
+
+h1 {
+    color: #fff;
+
+    text-shadow:
+        0 0 5px #fff,
+        0 0 15px #d000ff,
+        0 0 35px #a000ff,
+        0 0 70px #7800ff,
+        0 0 100px #7800ff;
+
+    animation: neonPurple 2s infinite alternate;
+}
+
+@keyframes neonPurple {
+    from {
+        filter: brightness(1);
+    }
+
+    to {
+        filter: brightness(1.5);
+    }
+}
+
+/* NEON INPUT */
+
+textarea {
+    border: 1px solid #a000ff;
+
+    box-shadow:
+        0 0 15px #a000ff55,
+        inset 0 0 20px #7800ff22;
+}
+
+textarea:focus {
+    border-color: #e0a0ff;
+
+    box-shadow:
+        0 0 15px #d000ff,
+        0 0 35px #a000ff,
+        0 0 65px #7800ff66,
+        inset 0 0 25px #a000ff33;
+}
+
+/* ULTRA NEON BUTTON */
+
+button {
+    background: linear-gradient(
+        135deg,
+        #4c008f,
+        #9500ff,
+        #c000ff,
+        #6500d9
+    );
+
+    background-size: 250% 250%;
+
+    border: 1px solid #e0a0ff;
+
+    box-shadow:
+        0 0 15px #a000ff,
+        0 0 30px #8500ff66,
+        inset 0 0 15px #ffffff22;
+
+    animation: buttonGradient 5s ease infinite;
+}
+
+@keyframes buttonGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+button:hover {
+    transform: translateY(-6px) scale(1.03);
+
+    box-shadow:
+        0 0 20px #d000ff,
+        0 0 45px #a000ff,
+        0 0 75px #7800ff88;
+}
+
+/* DATA COUNTER */
+
+#totalData {
+    border: 1px solid #c000ff;
+
+    color: #f0caff;
+
+    box-shadow:
+        0 0 15px #a000ff77,
+        inset 0 0 20px #8500ff33;
+}
+
+/* DATA CARDS */
+
+.item {
+    border: 1px solid #a000ff88;
+
+    background: linear-gradient(
+        135deg,
+        #8b00ff33,
+        #35005f55,
+        #160023aa
+    );
+
+    box-shadow:
+        0 0 15px #8500ff33,
+        inset 0 0 25px #a000ff22;
+}
+
+.item strong {
+    color: #e5b5ff;
+
+    text-shadow:
+        0 0 10px #c000ff,
+        0 0 25px #8500ff;
+}
+
+.item:hover {
+    border-color: #e5aaff;
+
+    box-shadow:
+        0 0 20px #c000ff,
+        0 0 45px #8500ff88,
+        inset 0 0 30px #a000ff44;
+}
+
+/* NEON SCROLLBAR */
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+        #6500ff,
+        #c000ff,
+        #e5aaff
+    );
+
+    box-shadow:
+        0 0 10px #a000ff,
+        0 0 20px #8500ff;
+}
+
+/* MOVING LIGHT BORDER */
+
+.container {
+    position: relative;
+}
+
+.container::before {
+    content: "";
+    position: absolute;
+
+    top: 0;
+    left: -100%;
+
+    width: 80%;
+    height: 3px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #fff,
+        #d000ff,
+        #9500ff,
+        transparent
+    );
+
+    box-shadow: 0 0 20px #c000ff;
+
+    animation: borderLight 4s linear infinite;
+}
+
+@keyframes borderLight {
+    to {
+        left: 150%;
+    }
+}
+
+/* MOBILE PERFORMANCE */
+
+@media(max-width: 600px) {
+    .container {
+        animation: show .8s ease;
+    }
+
+    button:hover {
+        transform: none;
+    }
+}
+
+/* =========================================
+   ARAP PURPLE GALAXY - EXTREME EFFECT
+========================================= */
+
+/* GALAXY BACKGROUND */
+
+body {
+    background-image:
+        radial-gradient(2px 2px at 10% 20%, #ffffffcc, transparent),
+        radial-gradient(2px 2px at 30% 70%, #d8a0ffcc, transparent),
+        radial-gradient(3px 3px at 80% 30%, #a855f7cc, transparent),
+        radial-gradient(2px 2px at 65% 85%, #ffffffaa, transparent),
+        radial-gradient(2px 2px at 90% 65%, #c084fcaa, transparent);
+
+    background-size: 350px 350px;
+    animation: galaxyMove 25s linear infinite;
+}
+
+@keyframes galaxyMove {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 350px 350px;
+    }
+}
+
+/* HOLOGRAM DASHBOARD */
+
+.container {
+    border: 1px solid #c084fc;
+
+    box-shadow:
+        0 0 20px #a855f7,
+        0 0 50px #9333ea88,
+        0 0 100px #7e22ce55,
+        inset 0 0 50px #9333ea22;
+}
+
+/* MOVING HOLOGRAM LIGHT */
+
+.container::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    border-radius: 35px;
+    pointer-events: none;
+
+    background: linear-gradient(
+        115deg,
+        transparent 35%,
+        #c084fc12 45%,
+        #ffffff12 50%,
+        #a855f722 55%,
+        transparent 65%
+    );
+
+    background-size: 250% 250%;
+    animation: hologramMove 7s linear infinite;
+}
+
+@keyframes hologramMove {
+    from {
+        background-position: 200% 0;
+    }
+
+    to {
+        background-position: -200% 0;
+    }
+}
+
+/* TITLE GALAXY */
+
+h1 {
+    text-shadow:
+        0 0 5px #fff,
+        0 0 15px #d8b4fe,
+        0 0 30px #c084fc,
+        0 0 60px #9333ea,
+        0 0 100px #7e22ce;
+
+    animation: titleGalaxy 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes titleGalaxy {
+    from {
+        filter: brightness(1);
+        transform: scale(1);
+    }
+
+    to {
+        filter: brightness(1.4);
+        transform: scale(1.015);
+    }
+}
+
+/* BUTTON SHINE */
+
+button {
+    isolation: isolate;
+}
+
+button::before {
+    width: 45%;
+    background: linear-gradient(
+        110deg,
+        transparent,
+        #ffffff99,
+        transparent
+    );
+
+    animation: buttonShine 4s infinite;
+}
+
+@keyframes buttonShine {
+    0%, 65% {
+        left: -120%;
+    }
+
+    100% {
+        left: 150%;
+    }
+}
+
+/* BUTTON GLOW */
+
+button:hover {
+    box-shadow:
+        0 0 15px #ffffff88,
+        0 0 35px #c084fc,
+        0 0 70px #9333ea;
+}
+
+/* INPUT NEON */
+
+textarea {
+    box-shadow:
+        0 0 15px #9333ea44,
+        inset 0 0 25px #9333ea22;
+}
+
+textarea:focus {
+    box-shadow:
+        0 0 20px #c084fc,
+        0 0 50px #9333ea88,
+        inset 0 0 30px #7e22ce44;
+}
+
+/* DATA CARD FLOAT */
+
+.item {
+    position: relative;
+    overflow: hidden;
+    transition: .4s;
+}
+
+.item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+
+    width: 70%;
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #ffffff12,
+        transparent
+    );
+
+    transition: .7s;
+    pointer-events: none;
+}
+
+.item:hover::before {
+    left: 130%;
+}
+
+.item:hover {
+    transform: translateY(-7px) scale(1.02);
+
+    box-shadow:
+        0 0 20px #a855f7,
+        0 0 45px #9333ea88,
+        inset 0 0 30px #c084fc33;
+}
+
+/* COUNTER PULSE */
+
+#totalData {
+    animation: counterPulse 2s infinite alternate;
+}
+
+@keyframes counterPulse {
+    from {
+        box-shadow: 0 0 10px #9333ea44;
+    }
+
+    to {
+        box-shadow:
+            0 0 25px #c084fc,
+            0 0 50px #9333ea66;
+    }
+}
+
+/* PURPLE BORDER LIGHT */
+
+.container {
+    outline: 1px solid #a855f722;
+    outline-offset: 7px;
+}
+
+/* SELECTION COLOR */
+
+::selection {
+    background: #9333ea;
+    color: white;
+}
+
+/* SMOOTH ANIMATION */
+
+button,
+.item,
+textarea {
+    transition: .35s ease;
+}
+
+/* REDUCE EFFECT ON SMALL SCREENS */
+
+@media(max-width: 600px) {
+    .container::after {
+        animation: none;
+    }
+
+    h1 {
+        animation: titleGalaxy 3s ease-in-out infinite alternate;
+    }
+}
+
+@media(prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
+
+/* =====================================
+   ARAP PURPLE GOD MODE
+===================================== */
+
+/* PURPLE AMBIENT LIGHT */
+
+body {
+    background:
+        radial-gradient(ellipse at 0% 0%, #a100ff66, transparent 40%),
+        radial-gradient(ellipse at 100% 100%, #5b00ff66, transparent 40%),
+        radial-gradient(ellipse at 50% 50%, #31005c44, transparent 65%),
+        #07020e;
+}
+
+/* DASHBOARD ENERGY */
+
+.container {
+    border: 1px solid #d8a0ff;
+
+    box-shadow:
+        0 0 20px #a000ff,
+        0 0 50px #a000ff88,
+        0 0 100px #7200ff66,
+        0 0 160px #5000aa33,
+        inset 0 0 60px #a000ff22;
+
+    animation:
+        show .8s ease,
+        godGlow 4s ease-in-out infinite alternate;
+}
+
+@keyframes godGlow {
+    from {
+        box-shadow:
+            0 0 20px #a000ff66,
+            0 0 50px #7200ff44,
+            inset 0 0 30px #a000ff11;
+    }
+
+    to {
+        box-shadow:
+            0 0 35px #d000ff,
+            0 0 80px #9500ff99,
+            0 0 130px #6500ff55,
+            inset 0 0 70px #a000ff33;
+    }
+}
+
+/* LASER BORDER */
+
+.container::before {
+    height: 3px;
+    width: 100%;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #ffffff,
+        #e879f9,
+        #9333ea,
+        #ffffff,
+        transparent
+    );
+
+    box-shadow:
+        0 0 15px #d000ff,
+        0 0 30px #9333ea;
+
+    animation: laserRun 3s linear infinite;
+}
+
+@keyframes laserRun {
+    from {
+        left: -100%;
+    }
+
+    to {
+        left: 120%;
+    }
+}
+
+/* TITLE ENERGY */
+
+h1 {
+    background: linear-gradient(
+        90deg,
+        #ffffff,
+        #e9b5ff,
+        #b44aff,
+        #ffffff
+    );
+
+    background-size: 300% auto;
+
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation:
+        titleGalaxy 3s ease-in-out infinite alternate,
+        titleColor 6s linear infinite;
+}
+
+@keyframes titleColor {
+    to {
+        background-position: 300% center;
+    }
+}
+
+/* CRYSTAL BUTTON */
+
+button {
+    border: 1px solid #e9b5ff;
+
+    background: linear-gradient(
+        135deg,
+        #500080,
+        #9500ff,
+        #c026ff,
+        #6500cc
+    );
+
+    box-shadow:
+        0 0 15px #a000ff,
+        0 0 30px #8500ff77,
+        inset 0 1px 2px #ffffff66,
+        inset 0 -5px 15px #33006666;
+}
+
+button:hover {
+    transform: translateY(-7px) scale(1.04);
+
+    box-shadow:
+        0 0 20px #ffffff88,
+        0 0 40px #d000ff,
+        0 0 80px #8500ff;
+}
+
+/* INPUT ENERGY */
+
+textarea {
+    border: 1px solid #c026ff;
+
+    background:
+        linear-gradient(145deg, #11051e, #080410);
+
+    box-shadow:
+        0 0 20px #9500ff55,
+        inset 0 0 30px #9500ff22;
+}
+
+/* HOLOGRAM CARDS */
+
+.item {
+    border: 1px solid #c084fc99;
+
+    background:
+        linear-gradient(
+            135deg,
+            #9d00ff44,
+            #42006b66,
+            #12001e
+        );
+
+    box-shadow:
+        0 0 15px #a000ff55,
+        inset 0 0 25px #d000ff22;
+}
+
+.item strong {
+    color: #f0d0ff;
+
+    text-shadow:
+        0 0 10px #d000ff,
+        0 0 25px #9500ff;
+}
+
+/* DATA CARD HOVER */
+
+.item:hover {
+    border-color: #ffffff;
+
+    box-shadow:
+        0 0 20px #d000ff,
+        0 0 50px #9500ff,
+        inset 0 0 35px #c000ff44;
+}
+
+/* COUNTER GOD MODE */
+
+#totalData {
+    border: 1px solid #e0a0ff;
+
+    background: linear-gradient(
+        90deg,
+        #4b0082,
+        #8700d9,
+        #4b0082
+    );
+
+    background-size: 200% 200%;
+
+    color: white;
+
+    text-shadow: 0 0 12px white;
+
+    box-shadow:
+        0 0 20px #a000ff,
+        0 0 50px #8500ff66;
+
+    animation: counterMove 4s linear infinite;
+}
+
+@keyframes counterMove {
+    from {
+        background-position: 0% 50%;
+    }
+
+    to {
+        background-position: 200% 50%;
+    }
+}
+
+/* SCROLLBAR GOD MODE */
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+        #6500ff,
+        #d000ff,
+        #ffffff,
+        #9500ff
+    );
+
+    box-shadow: 0 0 20px #d000ff;
+}
+
+/* HIGHLIGHT */
+
+::selection {
+    background: #d000ff;
+    color: white;
+}
+
+/* MOBILE */
+
+@media(max-width: 600px) {
+    .container {
+        box-shadow: 0 0 35px #9500ff66;
+    }
+
+    button:hover,
+    .item:hover {
+        transform: none;
+    }
+}
+
+/* =====================================
+   ARAP PURPLE LIGHTNING EFFECT ⚡
+===================================== */
+
+body {
+    position: relative;
+    isolation: isolate;
+    overflow-x: hidden;
+}
+
+/* PETIR DI BACKGROUND */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+
+    opacity: 0;
+
+    background:
+        linear-gradient(
+            115deg,
+            transparent 44%,
+            #d8a0ff 45%,
+            #ffffff 45.2%,
+            #a000ff 45.5%,
+            transparent 46%
+        ),
+        linear-gradient(
+            72deg,
+            transparent 65%,
+            #c084fc 65.2%,
+            #ffffff 65.4%,
+            #8500ff 65.7%,
+            transparent 66%
+        );
+
+    filter: drop-shadow(0 0 12px #b000ff);
+
+    animation: lightningStrike 8s infinite;
+}
+
+@keyframes lightningStrike {
+    0%, 88%, 90%, 93%, 100% {
+        opacity: 0;
+    }
+
+    89% {
+        opacity: .9;
+    }
+
+    89.3% {
+        opacity: .1;
+    }
+
+    89.7% {
+        opacity: 1;
+    }
+
+    90.2% {
+        opacity: 0;
+    }
+
+    92% {
+        opacity: .7;
+    }
+}
+
+/* KILAT CAHAYA SELURUH LAYAR */
+
+body::after {
+    animation:
+        purpleAura 9s infinite alternate,
+        lightningFlash 8s infinite;
+}
+
+@keyframes lightningFlash {
+    0%, 88%, 90%, 100% {
+        opacity: .25;
+    }
+
+    89% {
+        opacity: .8;
+    }
+
+    89.3% {
+        opacity: .2;
+    }
+
+    89.7% {
+        opacity: .9;
+    }
+
+    90.2% {
+        opacity: .25;
+    }
+}
+
+/* DASHBOARD IKUT BERCERAH */
+
+.container {
+    animation:
+        show .8s ease,
+        godGlow 4s ease-in-out infinite alternate,
+        thunderGlow 8s infinite;
+}
+
+@keyframes thunderGlow {
+    0%, 88%, 90%, 100% {
+        filter: brightness(1);
+    }
+
+    89% {
+        filter: brightness(1.3);
+    }
+
+    89.7% {
+        filter: brightness(1.5);
+    }
+}
